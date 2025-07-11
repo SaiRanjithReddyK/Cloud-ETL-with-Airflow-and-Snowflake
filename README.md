@@ -63,3 +63,28 @@ This project showcases how to build an end-to-end pipeline for booking data usin
 ```bash
 git clone https://github.com/SaiRanjithReddyK/Cloud-ETL-with-Airflow-and-Snowflake.git
 cd Cloud-ETL-with-Airflow-and-Snowflake
+```
+### 2. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+### 3.Set Up Airflow
+```bash
+export AIRFLOW_HOME=$(pwd)/airflow
+airflow db init
+airflow scheduler & airflow webserver
+```
+### 4. Configure dbt Connection
+--Update the profiles.yml file with your Snowflake credentials (account, schema, role, warehouse).
+### 5.  Run the Pipeline
+-Trigger the DAG
+```bash
+airflow dags trigger dbt_pipeline
+```
+## WHAT I GOT FROM THIS..?
+--Created a fully automated, containerized ETL workflow using top cloud-native tools.
+--Applied SQL transformations with dbt and in-warehouse Python analytics via Snowpark.
+--Automated and scheduled using Apache Airflow with Cosmos integration.
+
+
+
